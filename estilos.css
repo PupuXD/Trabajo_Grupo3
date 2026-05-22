@@ -1,4 +1,6 @@
-/* GENERAL */
+/* =========================
+   GENERAL
+========================= */
 * {
   box-sizing: border-box;
 }
@@ -43,18 +45,31 @@ button {
   display: inline-block;
 }
 
-/* TITULOS */
+/* =========================
+   TITULOS
+========================= */
 .section-center {
   text-align: center;
 }
 
 .section-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
   color: #3a9b7f;
   font-size: 13px;
   font-weight: bold;
   letter-spacing: 2px;
   text-transform: uppercase;
   margin-bottom: 10px;
+}
+
+.section-tag::before {
+  content: "";
+  width: 34px;
+  height: 2px;
+  background: #3a9b7f;
+  display: inline-block;
 }
 
 .section-title {
@@ -81,10 +96,15 @@ button {
   max-width: 760px;
 }
 
-/* HEADER */
+/* =========================
+   HEADER
+========================= */
 header {
   background: white;
   border-bottom: 1px solid #ddd;
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
 .nav {
@@ -128,7 +148,9 @@ header {
   font-weight: 600;
 }
 
-/* HERO */
+/* =========================
+   HERO
+========================= */
 .hero {
   padding: 60px 0 80px;
   background: linear-gradient(90deg, #f7f1e7, #eef3e9);
@@ -268,7 +290,9 @@ textarea {
   font-size: 13px;
 }
 
-/* DESTINOS */
+/* =========================
+   DESTINOS / TOURS
+========================= */
 .tours {
   background: #f7f2e8;
 }
@@ -339,7 +363,9 @@ textarea {
   background: linear-gradient(135deg, #7f99a6, #a9b8bf);
 }
 
-/* PLANIFICA */
+/* =========================
+   PLANIFICA
+========================= */
 .plan {
   background: #fbf8f0;
 }
@@ -451,7 +477,9 @@ textarea {
   color: rgba(255, 255, 255, 0.8);
 }
 
-/* SERVICIOS */
+/* =========================
+   SERVICIOS
+========================= */
 .services {
   background: #f2ebde;
 }
@@ -508,7 +536,9 @@ textarea {
   color: #6c7a80;
 }
 
-/* CTA */
+/* =========================
+   CTA
+========================= */
 .cta {
   background: linear-gradient(135deg, #0d3c56, #083246);
   color: white;
@@ -587,7 +617,9 @@ textarea {
   background: #35b48e;
 }
 
-/* FOOTER */
+/* =========================
+   FOOTER
+========================= */
 footer {
   background: #081f2a;
   color: #d6e0e5;
@@ -663,23 +695,25 @@ footer ul {
   color: #9eb0b8;
 }
 
-/* RESPONSIVE */
+/* =========================
+   RESPONSIVE
+========================= */
 @media (max-width: 900px) {
-  .hero-grid {
-    flex-direction: column;
+  .hero-grid,
+  .cta-wrap,
+  .plan-wrap,
+  .footer-top {
+    grid-template-columns: 1fr;
+  }
+
+  .tour-grid,
+  .service-grid {
+    grid-template-columns: 1fr;
   }
 
   .section-head {
     flex-direction: column;
     align-items: flex-start;
-  }
-
-  .tour-grid,
-  .service-grid,
-  .plan-wrap,
-  .cta-wrap,
-  .footer-top {
-    grid-template-columns: 1fr;
   }
 
   .nav {
